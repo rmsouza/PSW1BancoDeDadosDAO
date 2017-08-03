@@ -7,6 +7,7 @@ package psw1bancodedadosexercicio2;
 
 import DAO.DAOFactory;
 import DAO.DerbyMateriaDAO;
+import DAO.MateriaDAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,7 +23,9 @@ public class Controller {
      */
     public static void main(String[] args) {
 
-        DerbyMateriaDAO dao = new DerbyMateriaDAO();
+        MateriaDAO dao = 
+                MateriaDAO.MateriaDAOFactory( 
+                        MateriaDAO.DERBY );
         
         Materia materia1 = new Materia( "PSW 1");
         Materia materia2 = new Materia( "PSW 2");
