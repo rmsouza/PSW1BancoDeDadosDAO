@@ -5,6 +5,7 @@
  */
 package psw1bancodedadosexercicio2;
 
+import DAO.AlunoDAO;
 import DAO.DAOFactory;
 import DAO.DerbyMateriaDAO;
 import DAO.MateriaDAO;
@@ -33,24 +34,34 @@ public class Controller {
         dao.insert(materia1);
         dao.insert(materia2);
         
-        System.out.println("Mostrando matérias ------------");
-        ArrayList<Materia> materias = dao.findAll();
+        AlunoDAO alunoDAO = 
+                AlunoDAO. AlunoDAOFactory(
+                        AlunoDAO.DERBY );
         
-        for (Materia m : materias)
-            System.out.println(m.getId() + "\t" + m.getDescricao());
+        Aluno aluno1 = new Aluno("Fulano", 1234);
+        Aluno aluno2 = new Aluno("Ciclano", 1235);
         
+        alunoDAO.insert(aluno1);
+        alunoDAO.insert(aluno2);
         
-        Materia mat = dao.findById(7);
-        if (mat != null)
-            dao.delete(mat);
-        else
-            System.out.println("Não encontrado");
-        
-        System.out.println("Mostrando matérias ------------");
-        materias = dao.findAll();
-        
-        for (Materia m : materias)
-            System.out.println(m.getId() + "\t" + m.getDescricao());
+//        System.out.println("Mostrando matérias ------------");
+//        ArrayList<Materia> materias = dao.findAll();
+//        
+//        for (Materia m : materias)
+//            System.out.println(m.getId() + "\t" + m.getDescricao());
+//        
+//        
+//        Materia mat = dao.findById(7);
+//        if (mat != null)
+//            dao.delete(mat);
+//        else
+//            System.out.println("Não encontrado");
+//        
+//        System.out.println("Mostrando matérias ------------");
+//        materias = dao.findAll();
+//        
+//        for (Materia m : materias)
+//            System.out.println(m.getId() + "\t" + m.getDescricao());
        
     }
     
