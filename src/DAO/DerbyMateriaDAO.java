@@ -18,12 +18,10 @@ import psw1bancodedadosexercicio2.Materia;
  * @author alexandretorres
  */
 public class DerbyMateriaDAO extends MateriaDAO{
-    
-    private final Connection conn;
 
     public DerbyMateriaDAO(){
         DAOFactory dao = DAOFactory.getDAOFactory( DAOFactory.DERBY );
-        this.conn = dao.getConnection();
+        setConn(dao.getConnection());
     }
       
 }
